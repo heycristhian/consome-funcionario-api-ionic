@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cadastro (Funcionário)</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="cadastro()" #formulario="ngForm">
+    <ion-item>
+      <ion-label stacked>Nome:</ion-label>
+      <ion-input [(ngModel)]="nome" name="nome" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>CPF:</ion-label>
+      <ion-input [(ngModel)]="cpf" name="cpf" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Data de nascimento:</ion-label>
+      <ion-datetime [(ngModel)]="dataNascimento" name="dataNascimento" displayFormat="DD/MM/YYYY"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Cargo:</ion-label>    
+      <ion-select [(ngModel)]="descricaoCargo" name="descricaoCargo">
+        <ion-option value="DESENVOLVEDOR">DESENVOLVEDOR</ion-option>
+        <ion-option value="ANALISTA I">ANALISTA I</ion-option>
+        <ion-option value="ANALISTA II">ANALISTA II</ion-option>
+      </ion-select>
+    </ion-item>
+
+    
+  </form>
+
+  <ion-fab bottom center (click)="formulario.ngSubmit.emit()">
+    <button ion-fab>
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

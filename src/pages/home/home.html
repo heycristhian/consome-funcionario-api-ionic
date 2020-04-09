@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Gestão de funcionários
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let funcionario of funcionarios">
+      <h2>{{funcionario.nome}} </h2>
+      <small>{{funcionario.cargo.descricao}}</small>
+    </ion-item>
+  </ion-list>
+  <ion-fab bottom center (click)="adicionaFuncionario()">
+    <button ion-fab>
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
